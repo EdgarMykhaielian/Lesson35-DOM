@@ -88,27 +88,24 @@ btnClose.onclick = function () {
 // TRAFFIC LIGHTS
 let btnColor = document.getElementById("traffic__btn")
 let trafficLight = document.getElementById('lights__switcher')
-let previousState = 'green'
+let previousState = ''
+
 function colorSwitch() {
     if (trafficLight.classList.contains("green")) {
         trafficLight.classList.toggle("green");
         trafficLight.classList.toggle("yellow");
         previousState = 'green'
-        return;
     } else if (trafficLight.classList.contains("yellow")) {
-        console.log(previousState)
         trafficLight.classList.toggle("yellow");
-        if (previousState = 'green') {
+        if (previousState === 'green') {
             trafficLight.classList.toggle("red");
         } else {
             trafficLight.classList.toggle("green");
         }
-        return;
     } else if (trafficLight.classList.contains("red")) {
         trafficLight.classList.toggle("red");
         trafficLight.classList.toggle("yellow");
         previousState = 'red'
-        return;
     }
 }
 btnColor.onclick = colorSwitch
