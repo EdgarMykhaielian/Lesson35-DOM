@@ -1,0 +1,135 @@
+body {
+    background-image: url(assets/bg-img.jpg);
+    background-size: cover;
+    color: aliceblue;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+h1 {
+    position: absolute;
+    top: 10px;
+}
+body div {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    min-height: 50%;
+    align-items: center;
+    justify-content: center;
+    min-width: 30%;
+    border: 2px solid rgba(84, 85, 87, 1);
+    border-radius: 10px;
+    padding: 1rem 1rem 1.5rem 1rem;
+    background-color: rgba(8, 8, 10, 1);
+    position: relative;
+}
+
+.modal {
+    gap: 50px;
+}
+
+#myModal {
+    display: none;
+    text-align: center;
+}
+
+.modal__btn {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    padding: 1rem 1rem 1.5rem 1rem;
+    text-transform: uppercase;
+}
+
+.modal__btn:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.modal__btn:active {
+    color: #000
+}
+
+.modal__btn:active:after {
+    background: transparent;
+}
+
+.modal__btn:hover:before {
+    opacity: 1;
+}
+
+.modal__btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+}
+
+.traffic__lights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.traffic__lights div {
+    border: none;
+}
+
+.green {
+    background-image: url(./assets/traffic-light-green.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 5rem;
+    margin-top: 30px;
+}
+.yellow {
+    background-image: url(./assets/traffic-light-yellow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 5rem;
+    margin-top: 30px;
+}
+.red {
+    background-image: url(./assets/traffic-light-red.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 5rem;
+    margin-top: 30px;
+}
